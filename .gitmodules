@@ -1,8 +1,0 @@
-<<<<<<< HEAD
-[submodule "komparTest/komparcrmClient"]
-	path = komparTest/komparcrmClient
-=======
-[submodule "komparcrmClient"]
-	path = komparcrmClient
->>>>>>> 2f5e259b25ec5467e902fbe3f92b02113ed0b609
-	url = https://github.com/sofiene-feki/komparTest
