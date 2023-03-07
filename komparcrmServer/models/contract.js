@@ -21,20 +21,20 @@ const contractSchema = mongoose.Schema(
       maxlenght: 32,
       text: true,
     },
-    civility: {
+    Civility: {
       type: String,
       trim: true,
       maxlenght: 8,
       text: true,
     },
-    prenom: {
+    Prénom: {
       type: String,
       trim: true,
       maxlenght: 32,
       text: true,
     },
 
-    nom: {
+    Nom: {
       type: String,
       trim: true,
       maxlenght: 32,
@@ -50,49 +50,44 @@ const contractSchema = mongoose.Schema(
       maxlenght: 32,
       text: true,
     },
-    adresse: {
+    Adresse: {
       type: String,
       maxlenght: 100,
     },
-    codePostal: {
+    CodePostal: {
       type: Number,
     },
-    comune: {
+    Commune: {
       type: String,
       maxlenght: 50,
       text: true,
     },
-    mensualiteElec: {
-      type: Number,
-    },
-    optionTarifaire: {
+    Énergie: {
       type: String,
     },
-    prixAbonnement: {
+    PDL: {
       type: String,
     },
-    prixKwhBase: {
+    Puissance: {
       type: String,
     },
-    prixKwhHp: {
+    offre: {
       type: String,
     },
-    prixKwhHc: {
+    statut: {
       type: String,
-    },
-    puissance: {
-      type: Number,
-    },
-    dateActivationElec: {
-      type: Date,
-    },
-    mensualiteGaz: {
-      type: Number,
-    },
-    dateActivationGaz: {
-      type: Date,
     },
     partenaire: {
+      type: String,
+    },
+    date_début: {
+      type: Date,
+    },
+    date_signature: {
+      type: Date,
+    },
+
+    mensualité: {
       type: String,
     },
     quality: {
