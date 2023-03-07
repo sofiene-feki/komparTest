@@ -83,7 +83,7 @@ exports.getSavContacts = async (req, res) => {
       query.or([
         { clientRef: { $eq: quickFilterValue } },
         { tel: { $eq: quickFilterValue } },
-        { prenom: { $eq: quickFilterValue } },
+        { Prénom: { $eq: quickFilterValue } },
       ]);
     } else {
       query.where('quality.qualification').equals('SAV');
@@ -149,7 +149,7 @@ exports.contractFilter = async (req, res) => {
       query.or([
         { clientRef: { $regex: new RegExp(quickFilterValue, 'i') } },
         { tel: { $regex: new RegExp(quickFilterValue, 'i') } },
-        { prenom: { $regex: new RegExp(quickFilterValue, 'i') } },
+        { Prénom: { $regex: new RegExp(quickFilterValue, 'i') } },
       ]);
     }
 
@@ -221,7 +221,7 @@ exports.listAll = async (req, res) => {
       query.or([
         { clientRef: { $regex: new RegExp(quickFilterValue, 'i') } },
         { tel: { $regex: new RegExp(quickFilterValue, 'i') } },
-        { prenom: { $regex: new RegExp(quickFilterValue, 'i') } },
+        { Prénom: { $regex: new RegExp(quickFilterValue, 'i') } },
       ]);
     }
 
@@ -264,6 +264,24 @@ exports.remove = async (req, res) => {
     res.json(deleted);
   } catch (error) {
     return res.status(500).json({ error: error.message });
+  }
+};
+
+exports.updateData = async (req, res) => {
+  console.log('---------> i m the req', req.body);
+
+  try {
+    const updatedDocument = await Contract.findOneAndUpdate(
+      { clientRef: req.params.slug },
+      req.body,
+      { new: true }
+    ).exec();
+
+    console.log('---------> i m the update', updatedDocument);
+    res.json(updatedDocument);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: error.message });
   }
 };
 
@@ -348,7 +366,7 @@ exports.wcData = async (req, res) => {
       $or: [
         { clientRef: { $eq: quickFilterValue } },
         { tel: { $eq: quickFilterValue } },
-        { prenom: { $eq: quickFilterValue } },
+        { Prénom: { $eq: quickFilterValue } },
       ],
     };
     const contracts = await Contract.find(query).exec();
