@@ -18,6 +18,7 @@ const {
   wcData,
   qualityContractsPaginationCursor,
   getSavContacts,
+  updateData,
 } = require('../controlles/contract');
 
 router.post('/contract', authCheck, adminCheck, create);
@@ -35,6 +36,7 @@ router.get('/:contract/:slug', read);
 router.post('/search/filter', search);
 router.delete('/contract/:_id', authCheck, adminCheck, remove);
 router.put('/contract/update/quality/:slug', authCheck, updateQuality);
+router.put('/contract/update/data/:slug', authCheck, updateData);
 router.put('/contract/update/sav/:slug', authCheck, updateSav);
 router.put('/contract/update/wc/:slug', authCheck, updateWc);
 
