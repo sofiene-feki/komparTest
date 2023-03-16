@@ -19,6 +19,7 @@ const {
   qualityContractsPaginationCursor,
   getSavContacts,
   updateData,
+  contractAdvancedFilter,
 } = require('../controlles/contract');
 
 router.post('/contract', authCheck, adminCheck, create);
@@ -29,6 +30,7 @@ router.post(
 );
 router.post('/contracts/sav', getSavContacts);
 router.post('/ContractsFilters', contractFilter);
+router.post('/ContractsAdvancedFilters', contractAdvancedFilter);
 router.post('/contracts', listAll);
 router.post('/contracts/welcome-call', wcData);
 router.get('/contracts/total', contractsCount);
