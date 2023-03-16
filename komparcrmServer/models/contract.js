@@ -13,7 +13,7 @@ const contractSchema = mongoose.Schema(
     },
     slug: {
       type: String,
-      slug: 'clientRef',
+      slug: 'contratRef',
     },
     clientRef: {
       type: String,
