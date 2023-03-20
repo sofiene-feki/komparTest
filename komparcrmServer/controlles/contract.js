@@ -342,7 +342,8 @@ exports.contractFilter = async (req, res) => {
 
             // Query for documents where the date_signature field is between the start and end of the specified day
             query.where(filter.column).gte(startOfDay).lte(endOfDay);
-            break;
+            countQuery.where(filter.column).gte(startOfDay).lte(endOfDay);
+          break;
         }
       });
     }
