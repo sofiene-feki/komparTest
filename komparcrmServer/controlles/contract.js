@@ -572,7 +572,7 @@ exports.wcData = async (req, res) => {
       $or: [
         { clientRef: { $eq: quickFilterValue } },
         { tel: { $eq: quickFilterValue } },
-        { Prénom: { $eq: quickFilterValue } },
+        { Nom: { $eq: quickFilterValue } },
       ],
     };
     const contracts = await Contract.find(query).exec();
