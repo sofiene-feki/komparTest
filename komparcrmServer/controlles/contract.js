@@ -121,7 +121,7 @@ exports.getSavContacts = async (req, res) => {
       query.or([
         { clientRef: { $eq: quickFilterValue } },
         { tel: { $eq: quickFilterValue } },
-        { Prénom: { $eq: quickFilterValue } },
+        { Nom: { $eq: quickFilterValue } },
       ]);
     } else {
       query.where('sav.qualification').in([null, '']);
@@ -198,7 +198,7 @@ exports.getSavContacts = async (req, res) => {
 //       query.or([
 //         { clientRef: { $regex: new RegExp(quickFilterValue, 'i') } },
 //         { tel: { $regex: new RegExp(quickFilterValue, 'i') } },
-//         { Prénom: { $regex: new RegExp(quickFilterValue, 'i') } },
+//         { Nom: { $regex: new RegExp(quickFilterValue, 'i') } },
 //       ]);
 //     }
 
@@ -352,12 +352,12 @@ exports.contractFilter = async (req, res) => {
       query.or([
         { clientRef: { $regex: new RegExp(quickFilterValue, 'i') } },
         { tel: { $regex: new RegExp(quickFilterValue, 'i') } },
-        { Prénom: { $regex: new RegExp(quickFilterValue, 'i') } },
+        { Nom: { $regex: new RegExp(quickFilterValue, 'i') } },
       ]);
       countQuery.or([
         { clientRef: { $regex: new RegExp(quickFilterValue, 'i') } },
         { tel: { $regex: new RegExp(quickFilterValue, 'i') } },
-        { Prénom: { $regex: new RegExp(quickFilterValue, 'i') } },
+        { Nom: { $regex: new RegExp(quickFilterValue, 'i') } },
       ]);
     }
 
@@ -421,7 +421,7 @@ exports.contractAdvancedFilter = async (req, res) => {
       query = query.or([
         { clientRef: { $regex: new RegExp(quickFilterValue, 'i') } },
         { tel: { $regex: new RegExp(quickFilterValue, 'i') } },
-        { Prénom: { $regex: new RegExp(quickFilterValue, 'i') } },
+        { Nom: { $regex: new RegExp(quickFilterValue, 'i') } },
       ]);
     }
 
